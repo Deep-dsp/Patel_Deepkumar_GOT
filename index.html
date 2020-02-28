@@ -5,7 +5,7 @@
 <title>DOM Traversal</title>
 <link href="css/meyerReset.css" rel="stylesheet" type="text/css" media="screen">
 <link href="css/GOT_master.css" rel="stylesheet" type="text/css" media="screen">
-</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <body>
     <main>
@@ -38,6 +38,16 @@
     <p class="house-info"></p><!-- replace this with house details (github gist) -->
 </main>  <!--end mainContainer-->
 
-<script src="js/GOT_master.js"></script>
+<!-- put our lightbox on the top of the stack -->
+
+<section class="lightbox">
+
+  <span class="close-button">X</span>
+  <video src="video/House-Stark.mp4" class="stopVideo"></video>
+  <div class="div-controls">
+      <i class="fas fa-play-circle"></i>
+  </div>
+</section>
+<script src="js/main.js"></script>
 </body>
 </html>
