@@ -8,7 +8,8 @@ let sigilButtons = document.querySelectorAll(".sigilContainer"),
     closeButton = lightbox.querySelector(".close-button"),
     video = lightbox.querySelector(".stopVideo"),
     currentHouseName = document.querySelector("h1"),
-    houseDescription = document.querySelector(".house-info");
+    houseDescription = document.querySelector(".house-info"),
+    imageContainer = document.querySelector("#houseImages");
 
 const houseData = [
 
@@ -52,9 +53,24 @@ function hideLightBox()
   video.currentTime = 0;
 }
 
+
+function animateBanners()
+{
+  // clicking on the shield should trigger an animation
+  // figure out how far the banners should move with some simple math
+  let offsetWidth = 600;
+  let multiplier = this.dataset.offset;
+  let newPosition = offsetWidth * multiplier;
+
+//  debugger;
+// change the style.left property to match the new position - where it needs to move to
+  imageContainer.style.right = `${newPosition}px`;
+}
 // event hadling for our siginButtons
 
-sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
+//sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
+
+sigilButtons.forEach(button => button.addEventListener("click", animateBanners));
 
 // add some event handling for the lightbox close button
 closeButton.addEventListener("click", hideLightBox);

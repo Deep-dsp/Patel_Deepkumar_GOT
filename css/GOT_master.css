@@ -36,7 +36,7 @@ main {
 	overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:4000px; transition: all .8s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -139,7 +139,6 @@ video {
 {
   color: white;
   margin: 1.5em auto 0;
-  font-style: 'Arial', sans-serif;
   font-size: 1.5em;
   line-height: 1.5;
   width: 75%;
