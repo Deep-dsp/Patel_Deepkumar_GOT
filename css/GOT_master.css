@@ -134,3 +134,15 @@ video {
 	border: thin solid #949393;
   margin-left: 25%;
 }
+
+.house-info
+{
+  color: white;
+  margin: 1.5em auto 0;
+  font-style: 'Arial', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5;
+  width: 75%;
+  justify-content: justify;
+
+}
