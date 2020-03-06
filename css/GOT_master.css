@@ -109,7 +109,7 @@ main {
    */
 }
 
-.fas{
+.fas, .fa-play-circle{
 	color:white;
 }
 
@@ -129,7 +129,8 @@ main {
 
 
 video {
-	width: 80%;
+	width: 50%;
 	margin-top: 10%;
 	border: thin solid #949393;
+  margin-left: 25%;
 }

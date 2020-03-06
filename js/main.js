@@ -12,10 +12,18 @@ let sigilButtons = document.querySelectorAll(".sigilContainer"),
 
 function showLightBox()
 {
+  //debugger;
+  let houseName = this.className.split(" ")[1];
+  let newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
+
+  let targetSource = `video/House-${newSource}.mp4`;
+  // debugger;
   //show light box on a click;
   // debugger;
   lightbox.classList.add("show-lightbox");
   //Video play
+  video.src = targetSource;
+  video.load();
   video.play();
 
 }
