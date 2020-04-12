@@ -33,10 +33,10 @@ main {
 	height:360px;
 	background-color:grey;
 	margin:0 auto;
-	/*overflow:hidden;*/
+	overflow:hidden;
 }
 
-#houseImages { position:relative; width:4000px; transition: all .5s; }
+#houseImages { position:relative; width:4000px; transition: all .8s; }
 #houseImages img { float:left; }
 
 #bottomNav { margin-top:30px; }
@@ -97,11 +97,51 @@ main {
 }
 
 /* add styles here for lightbox and video */
+.lightbox{
+  position:absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display:none;
+  /* eventually we will hide it by default
+  display:none;
+   */
+}
 
+.fas, .fa-play-circle{
+	color:white;
+}
+
+.show-lightbox{
+  display: block;
+}
+
+.close-button{
+	color: white;
+	font-size: 2em;
+	padding: 10px;
+	float: right;
+	padding-right: 30px;
+	padding-top: 20px;
+	cursor: pointer;
+}
 
 
 video {
-	width: 80%;
+	width: 50%;
 	margin-top: 10%;
 	border: thin solid #949393;
+  margin-left: 25%;
+}
+
+.house-info
+{
+  color: white;
+  margin: 1.5em auto 0;
+  font-size: 1.5em;
+  line-height: 1.5;
+  width: 75%;
+  justify-content: justify;
+
 }
