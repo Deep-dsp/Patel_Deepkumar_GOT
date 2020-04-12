@@ -20,28 +20,21 @@ const houseData = [
 
     ["Lannister", `House Lannister of Casterly Rock is one of the Great Houses of Westeros, one of its richest and most powerful families and oldest dynasties. It is also the current royal house of the Seven Kingdoms following the extinction of House Baratheon of King's Landing, which had been their puppet house anyway.The Lannisters rule over the Westerlands. Their seat is Casterly Rock, a massive rocky promontory overlooking the Sunset Sea which has had habitations and fortifications built into it over the millennia. They are the Lords Paramount of the Westerlands and Wardens of the West. As the new royal house, they also rule directly over the Crownlands from their seat of the Red Keep in King's Landing, the traditional seat of the royal family.`],
 
-    ["tully",`House Tully of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God. `],
-
-    ["Greyjoy",`House Greyjoy of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God. `],
-
-    ["Arryn",`House Tully of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God. `]
-
+    ["Greyjoy",`House Greyjoy of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God. `]
   ];
 // functions go in the middle -> what do we want our app to do?
-
-  let houseName ='', newSource = '', arrayData;
 
 function showLightBox()
 {
   //debugger;
-  houseName = this.className.split(" ")[1];
-  newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
-  arrayData = this.dataset.offset;
-  // use this variable to populate the h1 element on the top
-  // currentHouseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
-  // houseDescription.textContent = `${houseData[this.dataset.offset][1]}`;
+  let houseName = this.className.split(" ")[1];
+  let newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
 
-  // let targetSource = `video/House-${houseName}.mp4`;
+  // use this variable to populate the h1 element on the top
+  currentHouseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
+  houseDescription.textContent = `${houseData[this.dataset.offset][1]}`;
+
+  let targetSource = `video/House-${houseName}.mp4`;
   // debugger;
   //show light box on a click;
   // debugger;
@@ -75,20 +68,21 @@ function animateBanners()
   imageContainer.style.right = `${newPosition}px`;
 }
 
+// Dynamic Change Text Function
 function changeText()
 {
-  currentHouseName.textContent = `House ${houseData[arrayData][0]}`;
-  console.log(currentHouseName.textContent);
-  houseDescription.textContent = `${houseData[arrayData][1]}`;
+  let houseName = this.className.split(" ")[1];
+  let newSource = houseName.charAt(0).toUpperCase() + houseName.slice(1);
+
+  // use this variable to populate the h1 element on the top
+  currentHouseName.textContent = `House ${houseData[this.dataset.offset][0]}`;
+  houseDescription.textContent = `${houseData[this.dataset.offset][1]}`;
 }
 
 // sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
 
-imageContainer.addEventListener("transitionend", changeText);
-sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
-
 // Adding dynamic content after completing transitions
-// con.addEventListener("transitionend", changeText);
+con.addEventListener("transitionend", changeText);
 
 sigilButtons.forEach(button => button.addEventListener("click", animateBanners));
 //
