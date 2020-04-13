@@ -174,3 +174,9 @@ video {
   margin-right: 15px;
   margin-left: 3px;
 }
+
+.active
+{
+  background-color: #A9A9A9;
+  border-radius: 50%;
+}

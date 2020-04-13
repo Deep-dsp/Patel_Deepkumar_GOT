@@ -10,7 +10,8 @@ let sigilButtons = document.querySelectorAll(".sigilContainer"),
     currentHouseName = document.querySelector("h1"),
     houseDescription = document.querySelector(".house-info"),
     imageContainer = document.querySelector("#houseImages"),
-    con = document.querySelector(".transition");
+    con = document.querySelector(".transition"),
+    customButtons = document.querySelectorAll(".div-controls img");
 
 const houseData = [
 
@@ -22,14 +23,14 @@ const houseData = [
 
     ["tully",`House Tully of Riverrun is an exiled Great House of Westeros. Its most senior member carried the title of Lord of Riverrun and Lord Paramount of the Trident, until the Red Wedding. The current head is Lord Edmure Tully, son of the late Hoster Tully. The Tully sigil is a silver trout on a red and blue background. Their house words are "Family, Duty, Honor.`],
 
-    ["Greyjoy",`House Greyjoy of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God. `],
+    ["Greyjoy",`House Greyjoy of Pyke is one of the Great Houses of Westeros. It rules over the Iron Islands, a harsh and bleak collection of islands off the west coast of Westeros, from the castle at Pyke. The head of the house is the Lord Reaper of Pyke.House Greyjoy's sigil is traditionally a golden kraken on a black field. Their house words are "We Do Not Sow," although the phrase "What Is Dead May Never Die" is also closely associated with House Greyjoy and their bannermen, as they are associated with the faith of the Drowned God.`],
 
     ["Arryn",`House Arryn of the Eyrie is one of the Great Houses of Westeros. It has ruled over the Vale of Arryn for millennia, originally as the Kings of Mountain and Vale and more recently as Lords Paramount of the Vale and Wardens of the East under the Targaryen kings and Baratheon-Lannister kings. The nominal head of House Arryn is Robin Arryn, the Lord of the Eyrie, with his stepfather Petyr Baelish acting as Lord Protector until he reaches the age of majority.`]
 
   ];
 // functions go in the middle -> what do we want our app to do?
 
-  let houseName ='', newSource = '', arrayData, targetSource;
+  let houseName = '', newSource = '', arrayData, targetSource;
 
 function showLightBox()
 {
@@ -79,13 +80,37 @@ function changeText()
   video.play();
 }
 
-// sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
+// Video Control Function
+
+function videoControls()
+{
+  let pause = false;
+  if(this.dataset.button == 2)
+  {
+    video.currentTime = 0;
+    video.pause();
+  }
+
+  else if(this.dataset.button == 3)
+  {
+    video.currentTime = 0;
+    video.play();
+  }
+
+  else if(this.dataset.button == 1)
+  {
+    video.pause();
+  }
+
+  else {
+    video.play();
+  }
+}
+
+// Adding dynamic content after completing transitions
 
 imageContainer.addEventListener("transitionend", changeText);
 sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
-
-// Adding dynamic content after completing transitions
-// con.addEventListener("transitionend", changeText);
 
 sigilButtons.forEach(button => button.addEventListener("click", animateBanners));
 //
@@ -94,5 +119,8 @@ closeButton.addEventListener("click", hideLightBox);
 
 // Lightbox closes when video ends
 video.addEventListener("ended", hideLightBox);
+
+// div video custom Controls
+customButtons.forEach(button => button.addEventListener("click", videoControls));
 
 })();
