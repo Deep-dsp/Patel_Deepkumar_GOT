@@ -1,7 +1,5 @@
 # GAME OF THRONES PROJECT
 
-![gotBanner](file:///V:/Fanshawe/Term_02/Authoring_02/Patel_Deepkumar_GOT/images/gotBan.jpg)
-
 ### About
 
 This is a project which describes each and every house or kingdom of ```GAME OF THRONES``` as well as display the story of each house using video pop up which can give good visualisation and understanding of storyline to the user.
