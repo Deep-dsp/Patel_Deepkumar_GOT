@@ -1,6 +1,6 @@
 # GAME OF THRONES PROJECT
 
-![](/images/house.png)
+![GOTHouse](/images/house.png)
 
 ### About
 
