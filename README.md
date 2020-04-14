@@ -1,6 +1,6 @@
 # GAME OF THRONES PROJECT
 
-![gotBanner](/images/gotBan.jpg)
+![gotBanner](file:///V:/Fanshawe/Term_02/Authoring_02/Patel_Deepkumar_GOT/images/gotBan.jpg)
 
 ### About
 
