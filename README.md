@@ -1,6 +1,6 @@
 # GAME OF THRONES PROJECT
 
-![gotBanner](/images/grungeBG.jpg)
+![gotBanner](/images/got.jpg)
 
 ### About
 
