@@ -11,14 +11,14 @@
     <main>
 
     <section id="imageContainer">
-    	<div id="houseImages" style="right:0"> <!-- add in all of the images to make a scrolling "banner" -->
+    	<div id="houseImages" class="transition" style="right:0"> <!-- add in all of the images to make a scrolling "banner" -->
     		<img src="images/stark.jpg"/>
     		<img src="images/baratheon.jpg"/>
     		<img src="images/lannister.jpg"/>
     		<img src="images/tully.jpg"/>
     		<img src="images/greyjoy.jpg"/>
     		<img src="images/arryn.jpg"/>
-        </div>
+      </div>
     </section>
 
     <nav id="bottomNav">
@@ -45,7 +45,10 @@
   <span class="close-button">X</span>
   <video src="video/House-Stark.mp4" class="stopVideo"></video>
   <div class="div-controls">
-      <i class="fas fa-play-circle"></i>
+      <img src="images/play.svg" data-button="0"  alt="play">
+      <img src="images/pause.svg"  data-button="1" alt="pause">
+      <img src="images/stop.svg" data-button="2" alt="stop">
+      <img src="images/rewind.svg" data-button="3" alt="rewind">
   </div>
 </section>
 <script src="js/main.js"></script>
