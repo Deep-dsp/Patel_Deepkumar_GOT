@@ -71,13 +71,15 @@ function changeText()
   console.log(currentHouseName.textContent);
   houseDescription.textContent = `${houseData[arrayData][1]}`;
 
-  //  Video Loaded
+  //  Video Loaded after 2 seconds of House title and description appears
+  setTimeout(function()
+  {
+    lightbox.classList.add("show-lightbox");
 
-  lightbox.classList.add("show-lightbox");
-
-  video.src = targetSource;
-  video.load();
-  video.play();
+    video.src = targetSource;
+    video.load();
+    video.play();
+  }, 2000);
 }
 
 // Video Control Function
@@ -111,6 +113,9 @@ function videoControls()
 
 imageContainer.addEventListener("transitionend", changeText);
 sigilButtons.forEach(button => button.addEventListener("click", showLightBox));
+
+// Trying setTimeOut property
+
 
 sigilButtons.forEach(button => button.addEventListener("click", animateBanners));
 //
